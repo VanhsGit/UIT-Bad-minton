@@ -24,5 +24,6 @@ Chào mừng bạn đến với **UIT-Badminton** — trang web được xây d�
   ```bash
   git checkout dev
   git pull origin dev
-  git checkout -b feature/ten-tinh-nang
+  git checkout -b feature/thay-doi
   ```
+- Push Code lên và Pull Request vào deploy
