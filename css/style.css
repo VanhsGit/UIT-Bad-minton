@@ -13401,7 +13401,7 @@ html.lt-ie-10 .range > .cell-lg-12 {
 
 .rd-navbar-wrap {
   position: relative;
-  z-index: 1060;
+  z-index: 40;
   font-size: 0;
   line-height: 0;
 }
@@ -16253,135 +16253,7 @@ html.tablet .ui-to-top {
   transition: 0.3s all ease;
 }
 
-#page-loader.loaded {
-  opacity: 0;
-  visibility: hidden;
-  z-index: -1;
-}
 
-#page-loader.ending {
-  display: none;
-}
-
-#page-loader > * {
-  width: 100%;
-  text-align: center;
-}
-
-#page-loader .page-loader-body {
-  margin-top: 30px;
-  text-align: center;
-}
-
-[data-x-mode="design-mode"] #page-loader {
-  display: none;
-}
-
-.cssload-cube {
-  background-color: #1e6091;
-  width: 13px;
-  height: 13px;
-  position: absolute;
-  margin: auto;
-  animation: cssload-cubemove 3.8s infinite ease-in-out;
-}
-
-.cssload-cube1 {
-  left: 18px;
-  top: 0px;
-  animation-delay: 0.19s;
-}
-
-.cssload-cube2 {
-  left: 35px;
-  top: 0px;
-  animation-delay: 0.38s;
-}
-
-.cssload-cube3 {
-  left: 53px;
-  top: 0px;
-  animation-delay: 0.57s;
-}
-
-.cssload-cube4 {
-  left: 0px;
-  top: 18px;
-  animation-delay: 0.19s;
-}
-
-.cssload-cube5 {
-  left: 18px;
-  top: 18px;
-  animation-delay: 0.38s;
-}
-
-.cssload-cube6 {
-  left: 35px;
-  top: 18px;
-  animation-delay: 0.57s;
-}
-
-.cssload-cube7 {
-  left: 53px;
-  top: 18px;
-  animation-delay: 0.76s;
-}
-
-.cssload-cube8 {
-  left: 0px;
-  top: 35px;
-  animation-delay: 0.38s;
-}
-
-.cssload-cube9 {
-  left: 18px;
-  top: 35px;
-  animation-delay: 0.57s;
-}
-
-.cssload-cube10 {
-  left: 35px;
-  top: 35px;
-  animation-delay: 0.76s;
-}
-
-.cssload-cube11 {
-  left: 53px;
-  top: 35px;
-  animation-delay: 0.95s;
-}
-
-.cssload-cube12 {
-  left: 0px;
-  top: 53px;
-  animation-delay: 0.57s;
-}
-
-.cssload-cube13 {
-  left: 18px;
-  top: 53px;
-  animation-delay: 0.76s;
-}
-
-.cssload-cube14 {
-  left: 35px;
-  top: 53px;
-  animation-delay: 0.95s;
-}
-
-.cssload-cube15 {
-  left: 53px;
-  top: 53px;
-  animation-delay: 1.14s;
-}
-
-.cssload-spinner {
-  margin: auto;
-  width: 69px;
-  height: 69px;
-  position: relative;
-}
 
 @-webkit-keyframes cssload-cubemove {
   35% {

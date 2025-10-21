@@ -18,6 +18,7 @@
       href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic%7CJosefin+Sans:400,700,300italic"
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/style.css" />
     <style>
@@ -38,16 +39,14 @@
     </style>
   </head>
   <body>
-    <div class="ie-panel">
-      <a href="http://windows.microsoft.com/en-US/internet-explorer/"
-        ><img
-          src="images/ie8-panel/warning_bar_0000_us.jpg"
-          height="42"
-          width="820"
-          alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."
-      /></a>
+    <div
+      id="loading"
+      class="fixed w-[100%] h-[100%] bg-white z-50 flex flex-col justify-center items-center z-50"
+    >
+      <div class="w-[32rem] max-w-[80vw]">
+        <div class="greeting-image-div" id="lottie-signature"></div>
+      </div>
     </div>
-
     <!-- Page-->
     <div class="page">
       <header class="section page-header">
@@ -341,4 +340,29 @@
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
   </body>
+  <script>
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        const loading = document.getElementById("loading");
+
+        if (loading) {
+          loading.style.display = "none";
+        }
+
+        document.body.style.overflow = "auto";
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }, 1500);
+    });
+    lottie.loadAnimation({
+      container: document.getElementById("lottie-signature"),
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      path: "/images/lottie/loading.json",
+    });
+  </script>
 </html>
