@@ -6398,33 +6398,7 @@ html:not(.tablet):not(.mobile).ie-11 .thumb-janez__content::after {
   background: #ffffff;
 }
 
-.thumb-ruby__image-wrap {
-  position: relative;
-  overflow: hidden;
-}
 
-.thumb-ruby__image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  opacity: 0.7;
-}
-
-@supports (object-fit: cover) {
-  .thumb-ruby__image {
-    top: 0;
-    left: 0;
-    transform: none;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-  }
-}
 
 .thumb-ruby__caption {
   position: relative;
@@ -6616,7 +6590,6 @@ html:not(.tablet):not(.mobile).ie-11 .thumb-ruby__caption::before {
 }
 
 html:not(.tablet):not(.mobile) .thumb-ruby__title,
-html:not(.tablet):not(.mobile) .thumb-ruby__image,
 html:not(.tablet):not(.mobile) .thumb-ruby__text,
 html:not(.tablet):not(.mobile) .thumb-ruby__caption::before {
   transition: opacity 0.4s, transform 0.4s;
@@ -6625,17 +6598,6 @@ html:not(.tablet):not(.mobile) .thumb-ruby__caption::before {
 html:not(.tablet):not(.mobile) .thumb-ruby__title {
   opacity: 0;
   transform: translate3d(0, 20px, 0);
-}
-
-html:not(.tablet):not(.mobile) .thumb-ruby__image {
-  opacity: 1;
-  transform: translate3d(-50%, -50%, 0) scale(1.15);
-}
-
-@supports (object-fit: cover) {
-  html:not(.tablet):not(.mobile) .thumb-ruby__image {
-    transform: scale(1.15);
-  }
 }
 
 html:not(.tablet):not(.mobile) .thumb-ruby__text {
@@ -6648,16 +6610,6 @@ html:not(.tablet):not(.mobile) .thumb-ruby:hover .thumb-ruby__caption::before {
   transform: scale(1);
 }
 
-html:not(.tablet):not(.mobile) .thumb-ruby:hover .thumb-ruby__image {
-  opacity: 0.44;
-  transform: translate3d(-50%, -50%, 0) scale(1);
-}
-
-@supports (object-fit: cover) {
-  html:not(.tablet):not(.mobile) .thumb-ruby:hover .thumb-ruby__image {
-    transform: scale(1);
-  }
-}
 
 html:not(.tablet):not(.mobile) .thumb-ruby:hover .thumb-ruby__title {
   opacity: 1;
@@ -6678,13 +6630,7 @@ html:not(.tablet):not(.mobile) .thumb-ruby:hover .thumb-ruby__text {
     bottom: 0;
     left: 0;
   }
-  .shell-fluid .thumb-ruby .thumb-ruby__image,
-  .shell-small .thumb-ruby .thumb-ruby__image {
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: none;
-  }
+
   .thumb-ruby + .thumb-ruby {
     margin-top: 5%;
   }
@@ -6710,10 +6656,6 @@ html:not(.tablet):not(.mobile) .thumb-ruby:hover .thumb-ruby__text {
 
 .thumb-ann .divider-small::before {
   background: #ffffff;
-}
-
-.thumb-ann__image {
-  width: 100%;
 }
 
 .thumb-ann__caption {
@@ -16179,43 +16121,7 @@ html.boxed .rd-navbar--is-clone {
   margin-right: auto;
 }
 
-/*
-*
-* ToTop
-* --------------------------------------------------
-*/
-.ui-to-top {
-  width: 45px;
-  height: 45px;
-  font-size: 30px;
-  line-height: 45px;
-  color: #ffffff;
-  background: #1e6091;
-  position: fixed;
-  right: 15px;
-  bottom: 15px;
-  overflow: hidden;
-  text-align: center;
-  text-decoration: none;
-  z-index: 20;
-  transition: 0.45s all ease-in-out;
-  transform: translateY(100px);
-}
 
-.ui-to-top:hover {
-  color: #ffffff;
-  background: #008a73;
-  text-decoration: none;
-}
-
-.ui-to-top.active {
-  transform: translateY(0);
-}
-
-html.mobile .ui-to-top,
-html.tablet .ui-to-top {
-  display: none !important;
-}
 
 @media (min-width: 480px) {
   .ui-to-top {
