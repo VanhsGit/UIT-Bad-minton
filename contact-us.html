@@ -40,6 +40,14 @@
   </head>
   <body>
     <div
+      id="success"
+      class="fixed w-[100%] h-[100%] bg-white z-50 flex hidden flex-col justify-center items-center z-50 opacity-90"
+    >
+      <div class="w-[32rem] max-w-[80vw]">
+        <div class="greeting-image-div" id="lottie-success"></div>
+      </div>
+    </div>
+    <div
       id="loading"
       class="fixed w-[100%] h-[100%] bg-white z-50 flex flex-col justify-center items-center z-50"
     >
@@ -128,33 +136,23 @@
         </div>
       </header>
 
-      <!-- Breadcrumbs-->
-      <section
-        class="breadcrumbs-custom bg-image"
-        style="background-image: url(images/breadcrumbs-image.jpg)"
-      >
-        <div class="shell">
-          <h1 class="breadcrumbs-custom__title">Liên Hệ</h1>
-        </div>
-      </section>
-
       <!-- Get in Touch-->
       <section class="section section-md bg-white text-center">
         <div class="shell">
           <div class="range range-md-center">
             <div class="cell-md-11 cell-lg-10">
-              <h2 class="text-bold">Get in Touch</h2>
+              <h2 class="text-bold">Góp ý về website</h2>
               <p>
-                <span class="box-width-2"
-                  >We are available 24/7 by fax, e-mail or by phone. You can
-                  also use our quick contact form to ask a question about our
-                  services and projects.</span
-                >
+                <span class="box-width-2">
+                  Tụi mình luôn sẵn sàng lắng nghe mọi góp ý, chia sẻ và ý tưởng
+                  từ bạn!
+                </span>
               </p>
+
               <div class="layout-columns">
+                <!-- Form liên hệ -->
                 <div class="layout-columns__main">
                   <div class="layout-columns__main-inner">
-                    <!-- RD Mailform-->
                     <form
                       class="rd-mailform"
                       data-form-output="form-output-global"
@@ -165,16 +163,16 @@
                       <div class="form-wrap">
                         <input
                           class="form-input"
-                          id="contact-date"
+                          id="contact-title"
                           type="text"
-                          data-time-picker="date"
-                          name="date"
+                          name="title"
                           data-constraints="@Required"
                         />
-                        <label class="form-label" for="contact-date"
-                          >Event Date</label
+                        <label class="form-label" for="contact-title"
+                          >Chủ đề</label
                         >
                       </div>
+
                       <div class="form-wrap">
                         <input
                           class="form-input"
@@ -184,9 +182,10 @@
                           data-constraints="@Required"
                         />
                         <label class="form-label" for="contact-name"
-                          >Your Name</label
+                          >Họ và tên</label
                         >
                       </div>
+
                       <div class="form-wrap">
                         <input
                           class="form-input"
@@ -196,12 +195,13 @@
                           data-constraints="@Email @Required"
                         />
                         <label class="form-label" for="contact-email"
-                          >E-mail</label
+                          >Email liên hệ</label
                         >
                       </div>
+
                       <div class="form-wrap">
                         <label class="form-label" for="contact-message"
-                          >Your Message</label
+                          >Nội dung góp ý</label
                         >
                         <textarea
                           class="form-input"
@@ -210,87 +210,87 @@
                           data-constraints="@Required"
                         ></textarea>
                       </div>
+
                       <div class="form-wrap form-button offset-1">
                         <button
                           class="button button-block button-primary-outline button-ujarak"
                           type="submit"
                         >
-                          make an appointment
+                          Gửi phản hồi
                         </button>
                       </div>
                     </form>
                   </div>
                 </div>
+
+                <!-- Thông tin bên cạnh -->
                 <div class="layout-columns__aside">
                   <div class="layout-columns__aside-item">
-                    <p class="heading-5">Socials</p>
+                    <p class="heading-5">Góp ý trực tiếp</p>
                     <div class="divider-modern"></div>
                     <ul class="list-inline-xs">
                       <li>
-                        <a
-                          class="icon icon-md icon-gray-7 fa fa-facebook"
-                          href="#"
-                        ></a>
+                        <a href="https://www.facebook.com/Vanhastenghia/">
+                          <img
+                            class="w-12 h-12"
+                            src="assets/icon/facebookLogo.png"
+                            alt=""
+                          />
+                        </a>
                       </li>
                       <li>
-                        <a
-                          class="icon icon-md icon-gray-7 fa fa-twitter"
-                          href="#"
-                        ></a>
+                        <a href="https://www.instagram.com/ph.n.vanh/">
+                          <img
+                            class="w-12 h-12 rounded-lg"
+                            src="assets/icon/ig.jpg"
+                            alt=""
+                          />
+                        </a>
                       </li>
                       <li>
-                        <a
-                          class="icon icon-md icon-gray-7 fa fa-google"
-                          href="#"
-                        ></a>
-                      </li>
-                      <li>
-                        <a
-                          class="icon icon-md icon-gray-7 fa fa-youtube"
-                          href="#"
-                        ></a>
+                        <a href="https://zalo.me/84363106151">
+                          <img
+                            class="w-12 h-12"
+                            src="assets/icon/zalo.jpg"
+                            alt=""
+                          />
+                        </a>
                       </li>
                     </ul>
                   </div>
+
                   <div class="layout-columns__aside-item">
-                    <p class="heading-5">Phone</p>
+                    <p class="heading-5">Source</p>
                     <div class="divider-modern"></div>
                     <div class="unit unit-horizontal unit-spacing-xxs">
-                      <div class="unit__left">
-                        <span
-                          class="icon icon-md icon-primary material-icons-local_phone"
-                        ></span>
-                      </div>
                       <div class="unit__body">
-                        <a href="tel:#">1-800-1234-567</a>
+                        <a
+                          href="https://github.com/VanhsGit/UIT-Bad-minton"
+                          target="_blank"
+                        >
+                          <img
+                            class="w-12 h-12"
+                            src="assets/icon/github.png"
+                            alt=""
+                          />
+                        </a>
                       </div>
                     </div>
                   </div>
+
                   <div class="layout-columns__aside-item">
-                    <p class="heading-5">Address</p>
+                    <p class="heading-5">
+                      Câu lạc bộ Người nhà Badminton – UIT
+                    </p>
                     <div class="divider-modern"></div>
                     <div class="unit unit-horizontal unit-spacing-xxs">
-                      <div class="unit__left">
-                        <span
-                          class="icon icon-md icon-primary material-icons-location_on"
-                        ></span>
-                      </div>
                       <div class="unit__body">
-                        <a href="#">267 Park Avenue New York, NY 90210</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="layout-columns__aside-item">
-                    <p class="heading-5">opening hours</p>
-                    <div class="divider-modern"></div>
-                    <div class="unit unit-horizontal unit-spacing-xxs">
-                      <div class="unit__left">
-                        <span
-                          class="icon icon-md icon-primary mdi mdi-clock"
-                        ></span>
-                      </div>
-                      <div class="unit__body">
-                        <span>We work every day 9:00–23:00</span>
+                        <a
+                          href="https://www.facebook.com/groups/1193301502073772"
+                          target="_blank"
+                        >
+                          UIT-Bad-minton
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -306,6 +306,33 @@
     <script src="js/script.js"></script>
   </body>
   <script>
+    const form = document.querySelector(".rd-mailform");
+    const successDiv = document.getElementById("success");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const title = document.getElementById("contact-title").value.trim();
+      const name = document.getElementById("contact-name").value.trim();
+      const email = document.getElementById("contact-email").value.trim();
+      const message = document.getElementById("contact-message").value.trim();
+
+      if (!title || !name || !email || !message) {
+        alert("Vui lòng nhập đầy đủ thông tin!");
+        return;
+      }
+
+      successDiv.classList.remove("hidden");
+
+      form.reset();
+
+      setTimeout(() => {
+        successDiv.classList.add("hidden");
+      }, 1000);
+    });
+  </script>
+
+  <script>
     window.addEventListener("load", () => {
       setTimeout(() => {
         const loading = document.getElementById("loading");
@@ -320,7 +347,7 @@
           top: 0,
           behavior: "smooth",
         });
-      }, 1000);
+      }, 1200);
     });
     lottie.loadAnimation({
       container: document.getElementById("lottie-signature"),
@@ -328,6 +355,14 @@
       loop: true,
       autoplay: true,
       path: "assets/lottie/loading.json",
+    });
+
+    lottie.loadAnimation({
+      container: document.getElementById("lottie-success"),
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      path: "assets/lottie/success.json",
     });
   </script>
 </html>
