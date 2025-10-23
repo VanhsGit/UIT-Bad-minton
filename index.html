@@ -37,6 +37,15 @@
     </style>
   </head>
   <body>
+    <!-- Success Loader-->
+    <div
+      id="success"
+      class="fixed w-[100%] h-[100%] bg-white z-50 flex hidden flex-col justify-center items-center z-50 opacity-90"
+    >
+      <div class="w-[32rem] max-w-[80vw]">
+        <div class="greeting-image-div" id="lottie-success"></div>
+      </div>
+    </div>
     <!-- Page Loader-->
     <div
       id="loading"
@@ -395,11 +404,11 @@
                     <div class="form-wrap">
                       <input
                         class="form-input"
-                        id="contact-email"
+                        id="contact-id"
                         type="email"
                         name="email"
                       />
-                      <label class="form-label" for="contact-email">MSSV</label>
+                      <label class="form-label" for="contact-id">MSSV</label>
                     </div>
                     <div class="form-wrap">
                       <label class="form-label" for="contact-message"
@@ -432,6 +441,32 @@
     <script src="js/script.js"></script>
   </body>
   <script>
+    const form = document.querySelector(".rd-mailform");
+    const successDiv = document.getElementById("success");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const id = document.getElementById("contact-id").value.trim();
+      const name = document.getElementById("contact-name").value.trim();
+      const email = document.getElementById("contact-email").value.trim();
+      const message = document.getElementById("contact-message").value.trim();
+
+      if (!id || !name || !email || !message) {
+        alert("Vui lòng nhập đầy đủ thông tin!");
+        return;
+      }
+
+      successDiv.classList.remove("hidden");
+
+      form.reset();
+
+      setTimeout(() => {
+        successDiv.classList.add("hidden");
+      }, 1000);
+    });
+  </script>
+  <script>
     window.addEventListener("load", () => {
       setTimeout(() => {
         const loading = document.getElementById("loading");
@@ -446,7 +481,7 @@
           top: 0,
           behavior: "smooth",
         });
-      }, 1000);
+      }, 1200);
     });
     lottie.loadAnimation({
       container: document.getElementById("lottie-signature"),
@@ -454,6 +489,13 @@
       loop: true,
       autoplay: true,
       path: "assets/lottie/loading.json",
+    });
+    lottie.loadAnimation({
+      container: document.getElementById("lottie-success"),
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      path: "assets/lottie/success.json",
     });
   </script>
 </html>
