@@ -307,94 +307,24 @@
         <div class="shell">
           <h1>Danh Sách Thành Viên</h1>
 
-          <div class="range range-50 range-sm-center">
-            <div class="cell-sm-9 cell-md-6">
-              <article class="quote-boxed">
-                <span></span><span></span><span></span><span></span>
-
-                <div class="flex gap-[2rem]">
-                  <img
-                    class="w-[150px] h-[200px] shrink-0"
-                    src="images/avatar/PVNghia.png"
-                    alt=""
-                  />
-                  <div class="pt-12">
-                    <p class="quote-boxed__title">Phạm Văn Nghĩa</p>
-                    <p>
-                      "I have been working with you for a long time and I can
-                      easily say that you are the best family photographer"
-                    </p>
-                    <p class="text-gray-700">Rank: S++</p>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="cell-sm-9 cell-md-6">
-              <article class="quote-boxed">
-                <span></span><span></span><span></span><span></span>
-
-                <div class="flex gap-[2rem]">
-                  <img
-                    class="w-[150px] h-[200px] shrink-0"
-                    src="images/avatar/PVNghia.png"
-                    alt=""
-                  />
-                  <div class="pt-12">
-                    <p class="quote-boxed__title">Phạm Văn Nghĩa</p>
-                    <p>
-                      "I have been working with you for a long time and I can
-                      easily say that you are the best family photographer"
-                    </p>
-                    <p class="text-gray-700">Rank: S++</p>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="cell-sm-9 cell-md-6">
-              <article class="quote-boxed">
-                <span></span><span></span><span></span><span></span>
-
-                <div class="flex gap-[2rem]">
-                  <img
-                    class="w-[150px] h-[200px] shrink-0"
-                    src="images/avatar/PVNghia.png"
-                    alt=""
-                  />
-                  <div class="pt-12">
-                    <p class="quote-boxed__title">Phạm Văn Nghĩa</p>
-                    <p>
-                      "I have been working with you for a long time and I can
-                      easily say that you are the best family photographer"
-                    </p>
-                    <p class="text-gray-700">Rank: S++</p>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="cell-sm-9 cell-md-6">
-              <article class="quote-boxed">
-                <span></span><span></span><span></span><span></span>
-
-                <div class="flex gap-[2rem]">
-                  <img
-                    class="w-[150px] h-[200px] shrink-0"
-                    src="images/avatar/PVNghia.png"
-                    alt=""
-                  />
-                  <div class="pt-12">
-                    <p class="quote-boxed__title">Phạm Văn Nghĩa</p>
-                    <p>
-                      "I have been working with you for a long time and I can
-                      easily say that you are the best family photographer"
-                    </p>
-                    <p class="text-gray-700">Rank: S++</p>
-                  </div>
-                </div>
-              </article>
+          <div
+            id="member-container"
+            class="range range-50 range-sm-center"
+          ></div>
+        </div>
+      </section>
+      <div id="popup" class="popup hidden">
+        <div class="popup-content">
+          <div class="popup-body">
+            <img id="popup-avatar" />
+            <div class="popup-info">
+              <h2 id="popup-name"></h2>
+              <p id="popup-quote"></p>
+              <p id="popup-rank"></p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </div>
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
@@ -402,6 +332,67 @@
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
   </body>
+  <script>
+    const popup = document.getElementById("popup");
+    const popupAvatar = document.getElementById("popup-avatar");
+    const popupName = document.getElementById("popup-name");
+    const popupQuote = document.getElementById("popup-quote");
+    const popupRank = document.getElementById("popup-rank");
+
+    function showPopup(id) {
+      fetch("data/member.json")
+        .then((res) => res.json())
+        .then((data) => {
+          const detail = data.find((d) => d.id == id);
+          if (!detail) return;
+
+          popupAvatar.src = detail.avatar;
+          popupName.textContent = detail.name;
+          popupQuote.textContent = `"${detail.quote}"`;
+          popupRank.textContent = `Rank: ${detail.rank}`;
+
+          popup.classList.remove("hidden");
+        });
+    }
+
+    popup.addEventListener("click", (e) => {
+      if (e.target === popup) popup.classList.add("hidden");
+    });
+  </script>
+  <script>
+    fetch("data/member.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const container = document.getElementById("member-container");
+
+        data.forEach((item) => {
+          const html = `
+          <div class="cell-sm-9 cell-md-6" >
+            <article class="quote-boxed cursor-pointer" data-id="${item.id}">
+              <span></span><span></span><span></span><span></span>
+              <div class="flex gap-[2rem]">
+                <img class="w-[150px] h-[200px] shrink-0" src="${item.avatar}" alt="${item.name}" />
+                <div class="pt-12">
+                  <p class="quote-boxed__title">${item.name}</p>
+                  <p>"${item.quote}"</p>
+                  <p class="text-gray-700">Rank: ${item.rank}</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        `;
+          container.insertAdjacentHTML("beforeend", html);
+        });
+
+        document.querySelectorAll(".quote-boxed").forEach((item) => {
+          item.addEventListener("click", () => {
+            const id = item.dataset.id;
+            showPopup(id);
+          });
+        });
+      })
+      .catch((err) => console.error("Lỗi load data:", err));
+  </script>
   <script>
     window.addEventListener("load", () => {
       setTimeout(() => {
@@ -427,4 +418,36 @@
       path: "assets/lottie/loading.json",
     });
   </script>
+  <style>
+    .popup {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .hidden {
+      display: none;
+    }
+    .popup-content {
+      background: transparent;
+      border-radius: 1rem;
+      padding: 2rem;
+      max-width: 700px;
+      width: 90%;
+      position: relative;
+    }
+    .popup-body {
+      display: flex;
+      gap: 2rem;
+    }
+    .popup-body img {
+      width: 200px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  </style>
 </html>
