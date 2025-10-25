@@ -2,15 +2,49 @@
   {
     "id": 1,
     "name": "Phạm Văn Nghĩa",
-    "quote": "Tôi đến đây không phải để chiến thắng, tôi đến đây là để kết nối với mọi người và tạo ra những phút giây vui vẻ",
-    "rank": "S++",
-    "avatar": "assets/avatar/PVNghia.png"
+    "avatar": "assets/avatar/PVNghia.png",
+    "quote": "Dancer số một câu lạc bộ",
+    "rank": "SSR",
+    "age": 23,
+    "gender": "Nam",
+    "from": "Gia Lai",
+    "achievements": [
+      "Top 1 giải đôi nam - nữ nội bộ 2025",
+      "Top 5 giải đôi nam nội bộ 2025"
+    ],
+    "skills": {
+      "professional": 70,
+      "strategy": 89,
+      "teamSpirit": 80,
+      "communication": 74
+    },
+    "spirit": {
+      "discipline": 3,
+      "contribution": 3
+    }
   },
   {
     "id": 2,
-    "name": "Nguyễn Thị Lan",
-    "quote": "Such a lovely experience! The photos were amazing!",
-    "rank": "A+",
-    "avatar": "assets/avatar/PVNghia.png"
+    "name": "Trần Nhật Tân",
+    "avatar": "assets/avatar/ttn.jpg",
+    "quote": "Thắng làm vua, thua đổ thừa đau bụng ",
+    "rank": "SSR",
+    "age": 24,
+    "gender": "Nam",
+    "from": "Cà Mau",
+    "achievements": [
+      "Top 2 giải đôi nam - nữ nội bộ 2025",
+      "Top 4 giải đôi nam nội bộ 2025"
+    ],
+    "skills": {
+      "professional": 69,
+      "strategy": 69,
+      "teamSpirit": 69,
+      "communication": 69
+    },
+    "spirit": {
+      "discipline": 4,
+      "contribution": 4
+    }
   }
 ]
