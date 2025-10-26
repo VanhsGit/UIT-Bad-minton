@@ -46,5 +46,26 @@
       "discipline": 4,
       "contribution": 4
     }
+  },
+  {
+    "id": 3,
+    "name": "Hứa Phú Thiên",
+    "avatar": "assets/avatar/hpt.png",
+    "quote": "Tôi không thua, tôi chỉ đang thử chiến thuật",
+    "rank": "A",
+    "age": 23,
+    "gender": "Nam",
+    "from": "Sóc Trăng",
+    "achievements": ["Top 1 giải đôi nam nội bộ 2025"],
+    "skills": {
+      "professional": 50,
+      "strategy": 80,
+      "teamSpirit": 100,
+      "communication": 75
+    },
+    "spirit": {
+      "discipline": 3,
+      "contribution": 3
+    }
   }
 ]
